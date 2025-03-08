@@ -44,12 +44,12 @@
         android:id="@+id/rvMascotas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
         android:layout_marginVertical="@dimen/size_nombre"
 
-        />
-   <!--  </LinearLayout>
--->
+        tools:layout_editor_absoluteX="194dp"
+        tools:layout_editor_absoluteY="-16dp" />
+    <!--  </LinearLayout>
+ -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
