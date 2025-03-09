@@ -114,4 +114,23 @@ public class DB extends SQLiteOpenHelper {
 
         return likes;
     }
+
+
+    public int obtenerNroMascotas(){
+        int nroMascotas = 0;
+
+        String query = "SELECT COUNT("+ Constantes_DB.TABLA_MASCOTAS_ID+")" +
+                " FROM " + Constantes_DB.TABLA_MASCOTAS ;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor registros = db.rawQuery(query, null);
+
+        if (registros.moveToNext()){
+            nroMascotas = registros.getInt(0);
+        }
+
+        db.close();
+
+        return nroMascotas;
+    }
 }
