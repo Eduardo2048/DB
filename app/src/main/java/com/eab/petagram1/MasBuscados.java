@@ -11,6 +11,9 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.eab.petagram1.Adapters.MascotaAdapter;
+import com.eab.petagram1.Modelo.Mascota;
+
 import java.util.ArrayList;
 
 public class MasBuscados extends AppCompatActivity   {
