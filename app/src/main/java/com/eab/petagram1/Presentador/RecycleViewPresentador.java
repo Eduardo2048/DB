@@ -1,6 +1,8 @@
 package com.eab.petagram1.Presentador;
 import android.content.Context;
 
+import androidx.core.app.ActivityCompat;
+
 import com.eab.petagram1.Modelo.ConstructorMascotas;
 import com.eab.petagram1.Modelo.Mascota;
 import com.eab.petagram1.Vista.IRV_Mascota;
@@ -33,6 +35,7 @@ public class RecycleViewPresentador implements IRecyclerViewPresentador{
     @Override
     public void mostrarMascotasRV() {
 
+        //ActivityCompat activityCompat = ActivityCompat();
         iRecyclerViewMascotas.inicializarAdapterRV(iRecyclerViewMascotas.creaAdaptador(mascotas));
         iRecyclerViewMascotas.generarLLayoutVertical();
     }

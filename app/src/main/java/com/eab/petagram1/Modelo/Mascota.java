@@ -7,18 +7,19 @@ private int i_Likes;
 
 private int i_Id;
 
-
 //private int i_Hueso;
+
 
     public Mascota() {
 
     }
 
-    public Mascota(int i_Imagen, String s_Name, int i_Likes, int i_Id) {
+    public Mascota(int i_Imagen, String s_Name, int i_Likes) {
         this.i_Imagen = i_Imagen;
         this.s_Name = s_Name;
         this.i_Likes = i_Likes;
-        this.i_Id = i_Id;
+       // this.i_Hueso=i_Hueso;
+
     }
 
 

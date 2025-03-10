@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager  LLM= new LinearLayoutManager(this);
         LLM.setOrientation(LinearLayoutManager.VERTICAL);
         ListaMascotas.setLayoutManager(LLM);
-        InicializarListaMascotas();
-        InicializarAdaptador();
+       // InicializarListaMascotas();
+       // InicializarAdaptador();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -86,11 +86,14 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
+/*
     private void InicializarAdaptador() {
         MascotaAdapter Adapter = new MascotaAdapter(mascotas,this);
         ListaMascotas.setAdapter(Adapter);
     }
+
+ */
+    /*
     private void  InicializarListaMascotas()
     {
         mascotas=new ArrayList<Mascota>();
@@ -105,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+     */
     private void CambiaAFavoritos(){
         Intent intent =new Intent(MainActivity.this, MasBuscados.class);
         startActivity(intent);

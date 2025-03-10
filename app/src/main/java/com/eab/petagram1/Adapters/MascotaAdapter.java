@@ -42,6 +42,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     MascotaHolder.imgFoto.setImageResource(mascota.getI_Imagen());
     MascotaHolder.tvLikes.setText(String.valueOf(mascota.getI_Likes()));
     MascotaHolder.tvNombre.setText(mascota.getS_Name());
+    MascotaHolder.imgHueso.setImageResource(R.drawable.ic_hueso1);
 
 
     MascotaHolder.imgFoto.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +74,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         private ImageView imgFoto;
         private TextView  tvNombre;
         private  TextView tvLikes;
-        private  ImageView imgHueso;
+       private  ImageView imgHueso;
 
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);

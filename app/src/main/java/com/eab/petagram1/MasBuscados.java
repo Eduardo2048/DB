@@ -41,8 +41,8 @@ public class MasBuscados extends AppCompatActivity   {
         LinearLayoutManager LLM= new LinearLayoutManager(this);
         LLM.setOrientation(LinearLayoutManager.VERTICAL);
         ListaMascotas.setLayoutManager(LLM);
-        InicializarListaMascotas();
-        InicializarAdaptador();
+      //  InicializarListaMascotas();
+       // InicializarAdaptador();
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mas_buscados), (v, insets) -> {
@@ -53,11 +53,12 @@ public class MasBuscados extends AppCompatActivity   {
 
 
     }
-
+/*
     private void InicializarAdaptador() {
         MascotaAdapter Adapter = new MascotaAdapter(mascotas,this);
         ListaMascotas.setAdapter(Adapter);
     }
+  */  /*
     private void  InicializarListaMascotas()
     {
         mascotas=new ArrayList<Mascota>();
@@ -68,5 +69,5 @@ public class MasBuscados extends AppCompatActivity   {
         mascotas.add(new Mascota(R.drawable.perro7,getResources().getString(R.string.perro7),2,R.drawable.ic_hueso1));
 
 
-    }
+    }*/
 }

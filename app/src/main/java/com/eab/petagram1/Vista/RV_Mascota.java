@@ -28,15 +28,13 @@ public class RV_Mascota  implements IRV_Mascota {
     private ArrayList<Mascota> mascotas;
     private RecyclerView rvMascotas;
 
-
-    private IRecyclerViewPresentador presentador;
+//    private ActivityCompat activity;
+    //private IRecyclerViewPresentador presentador;
     @Nullable
     public View onCreate(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //return super.onCreateView(inflater, container, savedInstanceState);
-        View v = inflater.inflate(R.layout.card_view_mascota, container, false);
+       View v = inflater.inflate(R.layout.card_view_mascota, container, false);
         rvMascotas = (RecyclerView) v.findViewById(R.id.rvMascotas);
-
-        presentador = new RecycleViewPresentador(this, v.getContext());
+      //  presentador = new RecycleViewPresentador(this, v.getContext());
         return v;
     }
 
@@ -45,7 +43,7 @@ public class RV_Mascota  implements IRV_Mascota {
     @Override
     public void generarLLayoutVertical() {
 
-            LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+            LinearLayoutManager llm = new LinearLayoutManager(rvMascotas.getContext());
             llm.setOrientation(LinearLayoutManager.VERTICAL);
             rvMascotas.setLayoutManager(llm);
     }
@@ -58,8 +56,8 @@ public class RV_Mascota  implements IRV_Mascota {
 
     @Override
     public void inicializarAdapterRV(MascotaAdapter MiAdapter) {
-            rvMascotas.setAdapter(MiAdapter);
-        }
 
+        rvMascotas.setAdapter(MiAdapter);
+        }
     }
 
