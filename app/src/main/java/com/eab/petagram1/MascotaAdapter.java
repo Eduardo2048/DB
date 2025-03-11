@@ -1,6 +1,7 @@
 package com.eab.petagram1;
 
 import android.app.Activity;
+import android.database.DatabaseUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.eab.petagram1.DB.DB;
+
 import java.util.ArrayList;
 
 public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaViewHolder>{
@@ -18,9 +21,12 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     ArrayList<Mascota> mascotas;
     Activity activity;
 
-    public MascotaAdapter(ArrayList<Mascota> mascotas, Activity activity ) {
+    DB Database;
+
+    public MascotaAdapter(ArrayList<Mascota> mascotas, Activity activity ,DB Database) {
         this.mascotas = mascotas;
         this.activity =activity;
+        this.Database = Database;
     }
 
     //  Infla el LAYOUT y lo pasa al viewholder para que obtenga los datos del view.
@@ -56,6 +62,8 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
            // Toast.makeText(activity,String.valueOf(mascota.getI_Likes()),Toast.LENGTH_SHORT).show();
             mascota.setI_Likes(mascota.getI_Likes()+1);
             notifyItemChanged(position);
+            Database.actualizarLikeMascota(mascota);
+            ;
         }
     });
 

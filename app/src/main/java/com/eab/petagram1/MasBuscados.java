@@ -11,12 +11,15 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.eab.petagram1.DB.DB;
+
 import java.util.ArrayList;
 
 public class MasBuscados extends AppCompatActivity   {
     private String TAG= "DBG_EAB";
     ArrayList<Mascota> mascotas;
     RecyclerView ListaMascotas;
+    DB DataBase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +35,15 @@ public class MasBuscados extends AppCompatActivity   {
 
         setSupportActionBar(miToolbar);
 
+        DataBase=new DB(this.getApplicationContext());
 
         ListaMascotas=(RecyclerView) findViewById(R.id.rvMascotasMB);
         // GridLayoutManager   LLM= new GridLayoutManager(this,2);
         LinearLayoutManager LLM= new LinearLayoutManager(this);
         LLM.setOrientation(LinearLayoutManager.VERTICAL);
         ListaMascotas.setLayoutManager(LLM);
-        InicializarListaMascotas();
+        mascotas=DataBase.obtenerListaMasBuscadas();
+
         InicializarAdaptador();
 
 
@@ -52,12 +57,20 @@ public class MasBuscados extends AppCompatActivity   {
     }
 
     private void InicializarAdaptador() {
-        MascotaAdapter Adapter = new MascotaAdapter(mascotas,this);
+        MascotaAdapter Adapter = new MascotaAdapter(mascotas,this,DataBase);
         ListaMascotas.setAdapter(Adapter);
     }
+
+    /*
     private void  InicializarListaMascotas()
     {
         mascotas=new ArrayList<Mascota>();
+        mascotas.add(new Mascota(R.drawable.perro5,getResources().getString(R.string.perro5),6));
+        mascotas.add(new Mascota(R.drawable.perro8,getResources().getString(R.string.perro8) ,5));
+        mascotas.add(new Mascota(R.drawable.perro4,getResources().getString(R.string.perro4),4));
+        mascotas.add(new Mascota(R.drawable.perro1,getResources().getString(R.string.perro1)  ,3));
+        mascotas.add(new Mascota(R.drawable.perro7,getResources().getString(R.string.perro7)  ,2));
+
         mascotas.add(new Mascota(R.drawable.perro5,getResources().getString(R.string.perro5),6,R.drawable.ic_hueso1));
         mascotas.add(new Mascota(R.drawable.perro8,getResources().getString(R.string.perro8),5,R.drawable.ic_hueso1));
         mascotas.add(new Mascota(R.drawable.perro4,getResources().getString(R.string.perro4),4,R.drawable.ic_hueso1));
@@ -65,5 +78,5 @@ public class MasBuscados extends AppCompatActivity   {
         mascotas.add(new Mascota(R.drawable.perro7,getResources().getString(R.string.perro7),2,R.drawable.ic_hueso1));
 
 
-    }
+    }*/
 }
